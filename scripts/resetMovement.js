@@ -1,5 +1,5 @@
 import { initRMTool } from './RMTool.js';
-import { initSettings } from '.settings.js';
+import { initSettings } from './settings.js';
 
 Hooks.once("init", () => {
     console.log("RM | initializing");

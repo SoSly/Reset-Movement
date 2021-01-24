@@ -15,9 +15,8 @@ export function initRMTool() {
 
 async function resetMovement() {
     const currentToken = canvas.tokens.get(game.combat.combatant.token._id);
-    await currentToken.setPosition(currentToken.getFlag("reset-movement", "x"), currentToken.getFlag("reset-movement", "y"));
     await currentToken.update({
         x: currentToken.getFlag("reset-movement", "x"),
         y: currentToken.getFlag("reset-movement", "y")
-    });
+    }, { animate : game.settings.get("reset-movement", "animationEnabled")});
 }

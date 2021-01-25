@@ -7,4 +7,14 @@ export function initSettings() {
         default: true,
         type: Boolean
     });
+
+    game.settings.register('reset-movement', 'previousMovement', {
+        name: "Enable Moving Token to Previous Position",
+        hint: "",
+        scope: "world",
+        config: true,
+        default: false,
+        type: Boolean,
+        onChange: () => window.location.reload()
+    });
 }

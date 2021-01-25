@@ -6,7 +6,7 @@ export function initRMTool() {
         bar.tools.push({
             name: "RM Tool",
             title: "Reset Movemnt",
-            icon: "fas fa-shoe-prints",
+            icon: "fas fa-walking",
             onClick: () => resetMovement(),
             button: true
         });

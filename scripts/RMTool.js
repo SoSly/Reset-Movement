@@ -28,10 +28,11 @@ async function resetMovement() {
     const startPosition = currentToken.getFlag("reset-movement", "startPosition");
     await currentToken.update({
         x: startPosition.x,
-        y: startPosition.y
+        y: startPosition.y,
+        rotation: startPosition.rotation
     }, { animate: game.settings.get("reset-movement", "animationEnabled") });
     if (game.settings.get('reset-movement', 'previousMovement')) {
-        await currentToken.setFlag("reset-movement", "positionHistory", [currentToken.getFlag("reset-movement", "startPosition")]);
+        await currentToken.setFlag("reset-movement", "positionHistory", [startPosition]);
     }
 }
 
@@ -46,7 +47,8 @@ async function previousMovement() {
     const previousPosition = positionHistory[positionHistory.length - 2];
     await currentToken.update({
         x: previousPosition.x,
-        y: previousPosition.y
+        y: previousPosition.y,
+        rotation: previousPosition.rotation
     }, { animate: game.settings.get("reset-movement", "animationEnabled") });
     positionHistory.pop();
     positionHistory.pop();

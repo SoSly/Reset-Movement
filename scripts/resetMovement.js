@@ -19,7 +19,7 @@ Hooks.once("ready", () => {
         Hooks.on("updateToken", async (scene, token, diff, options, id) => {
             if (!game.user.isGM) return;
             const currentToken = canvas.tokens.get(token._id);
-            if (game.combat.combatant.tokenId === currentToken.id && ('x' in diff || 'y' in diff)) {
+            if (game.combat?.combatant.tokenId === currentToken.id && ('x' in diff || 'y' in diff)) {
                 const positionHistory = currentToken.getFlag("reset-movement", "positionHistory");
                 positionHistory.push({x: token.x, y: token.y, rotation: token.rotation});
                 currentToken.setFlag("reset-movement", "positionHistory", positionHistory);

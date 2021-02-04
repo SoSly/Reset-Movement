@@ -28,6 +28,7 @@ Hooks.once("ready", () => {
     }
 
     Hooks.on("deleteCombat", async () => {
+        if (!game.user.isGM) return;
         for (let tkn of canvas.tokens.placeables) {
             await tkn.unsetFlag("reset-movement", "startPosition");
             await tkn.unsetFlag("reset-movement", "positionHistory");

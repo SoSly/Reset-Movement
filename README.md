@@ -15,3 +15,5 @@ GM users can click a button on the Token Layer toolbar to reset the current comb
 Movement animation during reset can be disabled in module settings.
 
 Ctrl+Z can reproduce much of this module's functionality, but is not specific to the current combatant.
+
+For an alternative method of tracking a token's position at the start of its turn, consider the start turn marker feature of [Next Up](https://foundryvtt.com/packages/Next-Up/).

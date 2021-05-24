@@ -1,5 +1,8 @@
 ![All Downloads](https://img.shields.io/github/downloads/jessev14/Reset-Movement/total?style=for-the-badge)
 
+[![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Freset-movement&colorB=4aa94a)](https://forge-vtt.com/bazaar#package=reset-movement)
+
+
 # Reset Movement
 
 Reset Movement (RM) is a FoundryVTT module that allows GM users to reset the current combatant's position to their position at the start of their turn.

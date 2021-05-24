@@ -23,18 +23,6 @@ Hooks.once("ready", () => {
         await currentToken.setFlag("reset-movement", "positionHistory", [currentToken.getFlag("reset-movement", "startPosition")]);
     });
 
-    if (game.settings.get("reset-movement", "previousMovement")) {
-        Hooks.on("updateToken", async (scene, token, diff, options, id) => {
-            if (!game.user.isGM) return;
-            const currentToken = canvas.tokens.get(token._id);
-            if (game.combat?.started && game.combat?.combatant?.tokenId === currentToken.id && ('x' in diff || 'y' in diff)) {
-                const positionHistory = currentToken.getFlag("reset-movement", "positionHistory");
-                positionHistory.push({ x: token.x, y: token.y, rotation: token.rotation });
-                currentToken.setFlag("reset-movement", "positionHistory", positionHistory);
-            }
-        });
-    }
-
     Hooks.on("deleteCombat", async () => {
         if (!game.user.isGM) return;
         for (let tkn of canvas.tokens.placeables) {

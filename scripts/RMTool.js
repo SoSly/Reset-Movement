@@ -22,4 +22,6 @@ async function resetMovement() {
         rotation: startPosition.rotation
     }, { animate: game.settings.get("reset-movement", "animationEnabled") });
 
+    if (game.modules.get("drag-ruler")) dragRuler.resetMovementHistory(game.combat, game.combat.current.combatantId);
+
 }

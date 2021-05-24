@@ -1,0 +1,10 @@
+{
+    "reset-movement": {
+        "settings": {
+            "animationEnabled": "Animate Movement During Reset"
+        },
+        "tool": {
+            "title": "Reset Movement"
+        }
+    }
+}

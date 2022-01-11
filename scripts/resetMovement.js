@@ -29,7 +29,7 @@ Hooks.once("ready", () => {
         if ((game.settings.get("reset-movement", "gmOnly") && !game.user.isGM) || !combat.combatant) return;
         const currentToken = canvas.tokens.get(combat.combatant.token.id);
         await currentToken.document.setFlag("reset-movement", "startPosition", { x: currentToken.x, y: currentToken.y, rotation: currentToken.rotation });
-        await currentToken.document.setFlag("reset-movement", "positionHistory", [currentToken.getFlag("reset-movement", "startPosition")]);
+        await currentToken.document.setFlag("reset-movement", "positionHistory", [currentToken.document.getFlag("reset-movement", "startPosition")]);
     });
 
     Hooks.on("deleteCombat", async () => {

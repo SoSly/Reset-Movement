@@ -1,7 +1,8 @@
 {
     "reset-movement": {
         "settings": {
-            "animationEnabled": "Animate Movement During Reset"
+            "animationEnabled": "Animate Movement During Reset",
+            "gmOnly": "Enable Movement Reset for GM only"
         },
         "tool": {
             "title": "Reset Movement"

@@ -2,9 +2,9 @@
     "name": "reset-movement",
     "title": "Reset Movement",
     "description": "Returns the current combatant to its original position from the start of its turn.",
-    "version": "1.3.3",
-    "minimumCoreVersion": "0.8.1",
-    "compatibleCoreVersion": "0.8.5",
+    "version": "1.4.0",
+    "minimumCoreVersion": "9",
+    "compatibleCoreVersion": "9",
     "author": "Jesse Vo (@enso#0361)",
     "esmodules": [
         "./scripts/resetMovement.js"

@@ -1,6 +1,6 @@
 export function initRMTool() {
     Hooks.on("getSceneControlButtons", (controls) => {
-        if (!game.user.isGM) return;
+        if (game.settings.get("reset-movement", "gmOnly") && !game.user.isGM) return;
 
         const bar = controls.find(c => c.name === "token");
         bar.tools.push({
@@ -14,9 +14,9 @@ export function initRMTool() {
 }
 
 async function resetMovement() {
-    const currentToken = canvas.tokens.get(game.combat.combatant.token._id);
-    const startPosition = currentToken.getFlag("reset-movement", "startPosition");
-    await currentToken.update({
+    const currentToken = canvas.tokens.get(game.combat.combatant.token.id);
+    const startPosition = currentToken.document.getFlag("reset-movement", "startPosition");
+    await currentToken.document.update({
         x: startPosition.x,
         y: startPosition.y,
         rotation: startPosition.rotation

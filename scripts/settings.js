@@ -7,6 +7,15 @@ export function initSettings() {
         default: true,
         type: Boolean
     });
+    
+    game.settings.register('reset-movement', 'gmOnly', {
+        name: "Enable Movement Reset for GM only",
+        hint: "",
+        scope: "world",
+        config: true,
+        default: true,
+        type: Boolean
+    });
 
     game.settings.register('reset-movement', 'previousMovement', {
         name: "Enable Moving Token to Previous Position",

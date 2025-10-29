@@ -22,6 +22,7 @@ async function resetMovement() {
         rotation: startPosition.rotation
     }, { animate: game.settings.get("reset-movement", "animationEnabled") });
 
-    if (game.modules.get("drag-ruler")?.active) dragRuler.resetMovementHistory(game.combat, game.combat.current.combatantId);
+    if (game.modules.get("drag-ruler")?.active) {dragRuler.resetMovementHistory(game.combat, game.combat.current.combatantId);}
 
+    Hooks.callAll("resetMovement", currentToken);
 }
